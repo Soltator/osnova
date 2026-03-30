@@ -13,117 +13,133 @@
         }
         
         body {
-            background: #f0e9dd;
+            background: #e8dfd1;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 12px;
             color: #2c3e4f;
         }
 
         .test-container {
-            max-width: 800px;
+            max-width: 750px;
             width: 100%;
             margin: 0 auto;
         }
 
         .test-card {
             background: #fffef8;
-            border-radius: 40px;
+            border-radius: 36px;
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
-            padding: 24px 20px;
+            padding: 20px 16px;
             border: 1px solid #ede5d8;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .test-card {
-                padding: 32px 28px;
+                padding: 28px 24px;
             }
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             background: linear-gradient(135deg, #3a5a6e, #2c4a5e);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
 
         .sub {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #7a8b9b;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border-left: 3px solid #bfaa92;
-            padding-left: 14px;
+            padding-left: 12px;
+        }
+
+        @media (min-width: 550px) {
+            .sub {
+                font-size: 0.9rem;
+                margin-bottom: 24px;
+            }
         }
 
         .progress-area {
             background: #e8e0d4;
-            height: 6px;
-            border-radius: 10px;
-            margin: 16px 0 24px 0;
+            height: 5px;
+            border-radius: 8px;
+            margin: 12px 0 20px 0;
             overflow: hidden;
+        }
+
+        @media (min-width: 550px) {
+            .progress-area {
+                height: 6px;
+                margin: 16px 0 24px 0;
+            }
         }
 
         .progress-fill {
             background: linear-gradient(90deg, #9b8875, #b8a48c);
             height: 100%;
             width: 0%;
-            border-radius: 10px;
+            border-radius: 8px;
             transition: width 0.3s ease;
         }
 
         .question-box {
             background: #ffffff;
-            border-radius: 28px;
-            padding: 24px 20px;
-            margin-bottom: 24px;
+            border-radius: 24px;
+            padding: 18px 16px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border: 1px solid #f0e8de;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .question-box {
-                padding: 28px 24px;
+                padding: 24px 22px;
+                margin-bottom: 24px;
             }
         }
 
         .question-text {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 500;
             color: #2c3f52;
             line-height: 1.4;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .question-text {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                margin-bottom: 28px;
             }
         }
 
         .options-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .option {
             background: #fefcf8;
             border: 2px solid #e8dfd2;
             border-radius: 60px;
-            padding: 14px 20px;
-            font-size: 1rem;
+            padding: 12px 16px;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -131,17 +147,17 @@
             color: #2c3e4f;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .option {
-                padding: 16px 24px;
-                font-size: 1.05rem;
+                padding: 14px 22px;
+                font-size: 1rem;
             }
         }
 
         .option:hover {
             background: #faf5ed;
             border-color: #cbb99f;
-            transform: translateX(4px);
+            transform: translateX(3px);
         }
 
         .option.selected {
@@ -150,8 +166,8 @@
         }
 
         .opt-letter {
-            width: 34px;
-            height: 34px;
+            width: 28px;
+            height: 28px;
             background: #e0d6ca;
             color: #2c3e4f;
             border-radius: 50%;
@@ -159,17 +175,17 @@
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 1rem;
-            margin-right: 16px;
+            font-size: 0.85rem;
+            margin-right: 12px;
             flex-shrink: 0;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .opt-letter {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-                margin-right: 20px;
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+                margin-right: 16px;
             }
         }
 
@@ -181,29 +197,30 @@
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0 12px;
+            gap: 8px;
+            margin: 16px 0 10px;
         }
 
         .btn {
             background: #ffffff;
             border: 2px solid #e0d5c7;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 50px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: #4a5b69;
             cursor: pointer;
             transition: all 0.2s;
             flex: 1 1 auto;
-            min-width: 100px;
+            min-width: 85px;
             text-align: center;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .btn {
-                padding: 14px 24px;
-                font-size: 1rem;
+                padding: 12px 22px;
+                font-size: 0.95rem;
+                min-width: 110px;
             }
         }
 
@@ -235,20 +252,27 @@
 
         .counter {
             text-align: center;
-            margin-top: 16px;
-            font-size: 0.9rem;
+            margin-top: 12px;
+            font-size: 0.8rem;
             color: #8f9eae;
+        }
+
+        @media (min-width: 550px) {
+            .counter {
+                font-size: 0.9rem;
+                margin-top: 16px;
+            }
         }
 
         .result-card {
             background: #fffef8;
-            border-radius: 40px;
-            padding: 32px 24px;
+            border-radius: 36px;
+            padding: 28px 20px;
             text-align: center;
         }
 
         .score-number {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #3a5a6e, #2c4a5e);
             -webkit-background-clip: text;
@@ -257,44 +281,50 @@
             line-height: 1;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 550px) {
             .score-number {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
         }
 
         .score-percent {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 400;
             color: #6a7e92;
-            margin: 12px 0 20px;
+            margin: 10px 0 16px;
         }
 
         .result-message {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #4a5f71;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .review-card {
             background: #fffef8;
-            border-radius: 40px;
-            padding: 24px 20px;
+            border-radius: 36px;
+            padding: 20px 16px;
+        }
+
+        @media (min-width: 550px) {
+            .review-card {
+                padding: 28px 24px;
+            }
         }
 
         .review-title {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 500;
             color: #2c3e4f;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .review-item {
             background: #fefaf5;
-            border-radius: 24px;
-            padding: 18px;
-            margin-bottom: 16px;
-            border-left: 6px solid;
+            border-radius: 20px;
+            padding: 14px;
+            margin-bottom: 14px;
+            border-left: 5px solid;
         }
 
         .review-item.correct {
@@ -307,17 +337,17 @@
 
         .review-q {
             font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 12px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
 
         .review-badge {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 500;
-            margin: 4px 8px 4px 0;
+            margin: 3px 6px 3px 0;
         }
 
         .review-correct-badge {
@@ -332,10 +362,10 @@
 
         .review-explain {
             background: #f7f2ea;
-            border-radius: 20px;
-            padding: 12px;
-            margin-top: 12px;
-            font-size: 0.85rem;
+            border-radius: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.75rem;
             color: #5a6e7d;
         }
 
@@ -347,8 +377,8 @@
             text-align: center;
         }
 
-        .mt-3 {
-            margin-top: 16px;
+        .mt-2 {
+            margin-top: 12px;
         }
 
         button {
@@ -361,7 +391,6 @@
 </head>
 <body>
     <div class="test-container" id="app">
-        <!-- Тест -->
         <div v-if="!finished" class="test-card">
             <h1>📡 ТСП — тактико-спеціальна</h1>
             <div class="sub">50 питань · оберіть правильний варіант</div>
@@ -392,7 +421,6 @@
             <div class="counter">{{ currentIdx + 1 }} / {{ totalCount }}</div>
         </div>
 
-        <!-- Результати -->
         <div v-else>
             <div v-if="!showReview" class="test-card result-card">
                 <div class="score-number">{{ userScore }}/{{ totalCount }}</div>
@@ -409,23 +437,22 @@
                 </div>
             </div>
 
-            <!-- Розбір -->
             <div v-else class="test-card review-card">
                 <h2 class="review-title">📋 Розбір помилок</h2>
-                <div v-for="(q, idx) in questionsWithAnswers" :key="idx" 
+                <div v-for="(q, idx) in questions" :key="idx" 
                      class="review-item" :class="{ correct: userAnswers[idx] === q.correctText, incorrect: userAnswers[idx] !== q.correctText }">
                     <div class="review-q">{{ idx+1 }}. {{ q.text }}</div>
                     <div>
                         <span class="review-badge" :class="userAnswers[idx] === q.correctText ? 'review-correct-badge' : 'review-wrong-badge'">
-                            Ваша відповідь: {{ userAnswers[idx] || '❌ не обрано' }}
+                            Ваша: {{ userAnswers[idx] || '❌ не обрано' }}
                         </span>
                         <span v-if="userAnswers[idx] !== q.correctText" class="review-badge review-correct-badge">
-                            ✅ Правильно: {{ q.correctText }}
+                            ✅ {{ q.correctText }}
                         </span>
                     </div>
-                    <div class="review-explain" v-html="q.explanation"></div>
+                    <div class="review-explain">{{ q.explanation }}</div>
                 </div>
-                <div class="text-center mt-3">
+                <div class="text-center mt-2">
                     <button class="btn btn-primary" @click="resetTest">⟲ Пройти знову</button>
                 </div>
             </div>
@@ -434,7 +461,7 @@
 
     <script>
         (function() {
-            // БАЗОВІ ПИТАННЯ (без варіантів, тільки текст і правильна відповідь)
+            // ВСІ 50 ПИТАНЬ з документа
             const baseQuestions = [
                 { text: "Умовне найменування апаратних радіоприймальних пристроїв:", correct: "БП-630", explanation: "Умовне найменування апаратних радіоприймальних пристроїв — БП-630." },
                 { text: "При розгортанні апаратних особовий склад працює в засобах захисту:", correct: "20%", explanation: "При розгортанні апаратних особовий склад працює в засобах захисту — 20%." },
@@ -472,58 +499,67 @@
                 { text: "При використанні антени ОЕ-505 в якості щогли до якого коліну під'єднуємо дипольний адаптер?", correct: "четверте", explanation: "Дипольний адаптер під'єднуємо до четвертого коліна." },
                 { text: "Яка відстань між щоглами при розгортанні антени RF-1912?", correct: "23 метри", explanation: "Відстань між щоглами — 23 метри." },
                 { text: "Яка кількість колін в щоглах, що входять до складу антени RF-1912?", correct: "5 колін", explanation: "В щоглах антени RF-1912 — 5 колін." },
-                { text: "Які варіанти живлення радіостанції RF-7800Н в складі апаратної Р-161А2М?", correct: "220В та 24В", explanation: "Живлення RF-7800Н: 220В та 24В." }
+                { text: "Які варіанти живлення радіостанції RF-7800Н в складі апаратної Р-161А2М?", correct: "220В та 24В", explanation: "Живлення RF-7800Н: 220В та 24В." },
+                { text: "Опорний вузол зв'язку призначений:", correct: "для утворення, складання каналів зв'язку і групових трактів; для передачі каналів зв'язку на вузли зв'язку пунктів управління; для передачі каналів зв'язку на допоміжні вузли зв'язку", explanation: "Опорний вузол зв'язку призначений для утворення, складання та передачі каналів зв'язку." },
+                { text: "Транкінговий зв'язок:", correct: "радіозв'язок мобільних абонентів, що здійснюється через базову приймально-передавальну станцію з автоматичним розподілом радіоканалів", explanation: "Транкінговий зв'язок — радіозв'язок мобільних абонентів з автоматичним розподілом радіоканалів." },
+                { text: "Вузли зв'язку і автоматизації класифікуються за наступними ознаками:", correct: "За належністю до системи управління; за призначенням у системі зв'язку; за належністю до пунктів управління; за підпорядкованістю, за умовами функціонування та розміщення", explanation: "Вузли зв'язку класифікуються за п'ятьма основними ознаками." },
+                { text: "Система зв'язку і автоматизації об'єднання включає до себе:", correct: "Вузли зв'язку пунктів управління, опорну мережу зв'язку, лінії прямого зв'язку, лінії прив'язки, мережу ФПЗ, систему технічного забезпечення зв'язку і АСУ, систему управління зв'язком, резерв сил і засобів зв'язку і АСУ", explanation: "Система зв'язку об'єднання включає всі перелічені елементи." },
+                { text: "Документація оперативно-технічної служби на вузлах зв'язку і автоматизації включає до себе:", correct: "Документи з організації чергування; документи бойової готовності; документи з організації зв'язку; документи прихованого управління; інструкції, робочі книги та журнали; керівні документи; довідкові документи", explanation: "Документація ОТС включає сім груп документів." },
+                { text: "Документи по ОТС чергової зміни елементу ВЗ:", correct: "схема-наказ на забезпечення зв'язку; журнал чергового по центру; графік стану зв'язків центру", explanation: "Документи чергової зміни: схема-наказ, журнал чергового, графік стану зв'язків." },
+                { text: "Захист ВЗ ПУ від ВТЗ, радіорозвідки та РЄБ забезпечується:", correct: "все перераховане", explanation: "Захист забезпечується комплексом заходів." },
+                { text: "Для управління вузлом зв'язку і автоматизації створюється система управління вузла, що охоплює:", correct: "Органи управління вузлом зв'язку; пункт управління вузлом, елементами вузла; мережу службового зв'язку та автоматичного контролю", explanation: "Система управління вузла охоплює органи управління, пункт управління та мережу службового зв'язку." },
+                { text: "Основними способами маскування вузлів зв'язку і автоматизації є:", correct: "Приховування; імітація; демонстраційні дії; дезінформація", explanation: "Способи маскування: приховування, імітація, демонстраційні дії, дезінформація." },
+                { text: "Підготовка та допуск військовослужбовців до самостійного несення чергування на ВЗіА включає:", correct: "Навчання у складі підрозділів; стажування на ВЗіА; складання заліків на допуск", explanation: "Підготовка включає навчання, стажування та складання заліків." },
+                { text: "Схема-наказ розробляється для:", correct: "Вузла зв'язку і автоматизації, центрів і бойових постів", explanation: "Схема-наказ розробляється для вузла зв'язку, центрів і бойових постів." },
+                { text: "Елемент вузла зв'язку -- це:", correct: "частина сил та засобів вузла зв'язку, що виконує функціонально одноманітне завдання", explanation: "Елемент вузла зв'язку — частина сил та засобів з одноманітним завданням." },
+                { text: "З чого складається антена RF-1944?", correct: "Два плеча диполя, два нейлонових шнура, мотовила, два кола, два додаткових навантажувальних опора, два кола заземлення, узгоджуючий трансформатор, коаксіальний кабель, сумка для переносу", explanation: "Антена RF-1944 складається з дев'яти основних елементів." }
             ];
 
-            // Генерація схожих варіантів для кожного питання
-            function generateSimilarOptions(correct, questionIndex) {
-                // Банк схожих відповідей для підміни
-                const similarBanks = {
-                    "БП-630": ["БП-620", "Р-161", "Р-142", "БП-640", "Р-405", "Р-168"],
-                    "20%": ["10%", "15%", "25%", "30%", "40%", "50%"],
-                    "Елемент вузла зв'язку": ["Пункт управління", "Окрема радіостанція", "Система зв'язку", "Мережа зв'язку", "Центр управління"],
-                    "Радіонапрямок, радіомережа, абонентська група": ["Радіонапрямок, радіомережа", "Радіонапрямок, абонентська група", "Радіомережа, абонентська група", "Радіонапрямок, радіолінія"],
-                    "1, 2, 3": ["I, II, III", "A, B, C", "висока, середня, низька", "1, 2", "2, 3"],
-                    "Своєчасність, достовірність, безпека": ["Швидкість, якість, надійність", "Точність, оперативність, прихованість", "Безперервність, стійкість, живучість", "Оперативність, надійність, якість"],
-                    "Лінійне, нелінійне": ["Відкрите, закрите", "Розосереджене, зосереджене", "Стаціонарне, польове", "Кругове, лінійне"],
-                    "< 4 Ом": ["< 1 Ом", "< 2 Ом", "< 5 Ом", "< 10 Ом", "< 25 Ом", "> 4 Ом"],
-                    "< 25 Ом": ["< 4 Ом", "< 10 Ом", "< 15 Ом", "< 20 Ом", "< 30 Ом", "> 25 Ом"],
-                    "перший": ["другий", "третій", "четвертий", "п'ятий", "нижній", "верхній"],
-                    "четверте": ["друге", "третє", "п'яте", "шосте", "перше"],
-                    "23 метри": ["15 метрів", "18 метрів", "20 метрів", "25 метрів", "30 метрів", "35 метрів"],
-                    "5 колін": ["4 коліна", "6 колін", "7 колін", "8 колін", "3 коліна"],
-                    "220В та 24В": ["12В та 24В", "220В та 12В", "тільки 220В", "тільки 24В", "110В та 24В", "220В та 36В"],
-                    "Начальник апаратної": ["Командир роти", "Начальник штабу", "Черговий по вузлу", "Старший зміни", "Командир взводу"],
-                    "150-200м": ["100-150м", "120-180м", "180-220м", "200-250м", "50-100м"],
-                    "50-70м": ["30-50м", "40-60м", "60-80м", "70-100м", "80-120м"],
-                    "RF-1944 та RF-3120": ["RF-1940 та OE-505", "RF-1912 та RF-1940", "AC30 та AC120", "RF-1944 та OE-505", "RF-3120 та RF-1912"]
+            // Функція генерації схожих варіантів
+            function generateSimilarOptions(correct, questionText) {
+                const banks = {
+                    "БП-630": ["БП-620", "Р-161", "Р-142", "БП-640", "Р-405"],
+                    "20%": ["10%", "15%", "25%", "30%", "40%"],
+                    "Елемент вузла зв'язку": ["Пункт управління", "Окрема радіостанція", "Система зв'язку", "Мережа зв'язку"],
+                    "Радіонапрямок, радіомережа, абонентська група": ["Радіонапрямок, радіомережа", "Радіонапрямок, абонентська група", "Радіомережа, абонентська група"],
+                    "1, 2, 3": ["I, II, III", "A, B, C", "1, 2", "2, 3"],
+                    "Своєчасність, достовірність, безпека": ["Швидкість, якість, надійність", "Точність, оперативність, прихованість", "Безперервність, стійкість, живучість"],
+                    "Лінійне, нелінійне": ["Відкрите, закрите", "Розосереджене, зосереджене", "Стаціонарне, польове"],
+                    "< 4 Ом": ["< 1 Ом", "< 2 Ом", "< 5 Ом", "< 10 Ом", "< 25 Ом"],
+                    "< 25 Ом": ["< 4 Ом", "< 10 Ом", "< 15 Ом", "< 20 Ом", "< 30 Ом"],
+                    "перший": ["другий", "третій", "четвертий", "п'ятий"],
+                    "четверте": ["друге", "третє", "п'яте", "шосте"],
+                    "23 метри": ["15 метрів", "18 метрів", "20 метрів", "25 метрів", "30 метрів"],
+                    "5 колін": ["4 коліна", "6 колін", "7 колін", "8 колін"],
+                    "220В та 24В": ["12В та 24В", "220В та 12В", "тільки 220В", "тільки 24В"],
+                    "Начальник апаратної": ["Командир роти", "Начальник штабу", "Черговий по вузлу", "Старший зміни"],
+                    "150-200м": ["100-150м", "120-180м", "180-220м", "200-250м"],
+                    "50-70м": ["30-50м", "40-60м", "60-80м", "70-100м"],
+                    "RF-1944 та RF-3120": ["RF-1940 та OE-505", "RF-1912 та RF-1940", "AC30 та AC120"],
+                    "RF-1944": ["RF-1940", "RF-1912", "RF-3120", "OE-505"],
+                    "Начальник апаратної, старший радіотелефоніст, радіотелефоніст, водій-електрик": ["Начальник, радист, телефоніст", "Командир, зв'язківець, водій", "Старший, оператор, механік"]
                 };
                 
-                const bank = similarBanks[correct];
-                if (bank && bank.length >= 3) {
-                    // Взяти 3 випадкові схожі варіанти
-                    const shuffled = [...bank];
-                    for (let i = shuffled.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-                    }
-                    const options = [correct, ...shuffled.slice(0, 3)];
-                    // Перемішати
-                    for (let i = options.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [options[i], options[j]] = [options[j], options[i]];
-                    }
-                    return options;
+                let bank = banks[correct];
+                if (!bank) {
+                    bank = ["Варіант 1", "Варіант 2", "Варіант 3", "Варіант 4"];
                 }
-                
-                // Якщо немає банку, створити універсальні схожі варіанти
-                return [correct, "Невірний варіант 1", "Невірний варіант 2", "Невірний варіант 3"];
+                const shuffledBank = [...bank];
+                for (let i = shuffledBank.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffledBank[i], shuffledBank[j]] = [shuffledBank[j], shuffledBank[i]];
+                }
+                const options = [correct, ...shuffledBank.slice(0, 3)];
+                for (let i = options.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [options[i], options[j]] = [options[j], options[i]];
+                }
+                return options;
             }
 
-            // Підготовка питань з динамічними варіантами
             function prepareQuestions() {
-                return baseQuestions.map((q, idx) => {
-                    const similarOptions = generateSimilarOptions(q.correct, idx);
+                return baseQuestions.map((q) => {
+                    const similarOptions = generateSimilarOptions(q.correct, q.text);
                     return {
                         ...q,
                         correctText: q.correct,
@@ -532,9 +568,6 @@
                 });
             }
 
-            let questionsData = prepareQuestions();
-            
-            // Перемішування варіантів для кожного питання при завантаженні
             function shuffleOptions(questions) {
                 return questions.map(q => {
                     const shuffled = [...q.options];
@@ -557,22 +590,14 @@
                     userAnswers: [],
                     finished: false,
                     showReview: false,
-                    questions: shuffleOptions(questionsData),
+                    questions: shuffleOptions(prepareQuestions()),
                     letters: ['A', 'B', 'C', 'D']
                 },
                 computed: {
-                    current() {
-                        return this.questions[this.currentIdx];
-                    },
-                    totalCount() {
-                        return this.questions.length;
-                    },
-                    isLast() {
-                        return this.currentIdx === this.totalCount - 1;
-                    },
-                    progressPercent() {
-                        return ((this.currentIdx + 1) / this.totalCount) * 100;
-                    },
+                    current() { return this.questions[this.currentIdx]; },
+                    totalCount() { return this.questions.length; },
+                    isLast() { return this.currentIdx === this.totalCount - 1; },
+                    progressPercent() { return ((this.currentIdx + 1) / this.totalCount) * 100; },
                     userScore() {
                         let correct = 0;
                         for (let i = 0; i < this.questions.length; i++) {
@@ -580,24 +605,16 @@
                         }
                         return correct;
                     },
-                    scorePercent() {
-                        return Math.round((this.userScore / this.totalCount) * 100);
-                    },
-                    questionsWithAnswers() {
-                        return this.questions;
-                    }
+                    scorePercent() { return Math.round((this.userScore / this.totalCount) * 100); }
                 },
                 methods: {
-                    selectOption(idx) {
-                        this.selectedIndex = idx;
-                    },
+                    selectOption(idx) { this.selectedIndex = idx; },
                     next() {
                         if (this.selectedIndex !== null) {
                             const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
                             this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
                             if (this.currentIdx < this.totalCount - 1) {
                                 this.currentIdx++;
-                                // Відновити вибраний індекс для наступного питання
                                 const savedAnswer = this.userAnswers[this.currentIdx];
                                 if (savedAnswer) {
                                     const foundIdx = this.current.shuffledOptions.findIndex(opt => opt === savedAnswer);
@@ -611,8 +628,7 @@
                     prev() {
                         if (this.currentIdx > 0) {
                             if (this.selectedIndex !== null) {
-                                const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
-                                this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
+                                this.$set(this.userAnswers, this.currentIdx, this.current.shuffledOptions[this.selectedIndex]);
                             }
                             this.currentIdx--;
                             const savedAnswer = this.userAnswers[this.currentIdx];
@@ -626,14 +642,12 @@
                     },
                     finish() {
                         if (this.selectedIndex !== null) {
-                            const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
-                            this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
+                            this.$set(this.userAnswers, this.currentIdx, this.current.shuffledOptions[this.selectedIndex]);
                         }
                         this.finished = true;
                     },
                     resetTest() {
-                        // Перемішати варіанти заново
-                        this.questions = shuffleOptions(questionsData);
+                        this.questions = shuffleOptions(prepareQuestions());
                         this.currentIdx = 0;
                         this.selectedIndex = null;
                         this.userAnswers = [];
