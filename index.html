@@ -2,195 +2,209 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>ТСП — тактико-спеціальна підготовка</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><path d="M0 0 L300 0 L300 300 L0 300 Z" fill="%23f5f0e6"/><path d="M40 80 Q80 20, 120 80 L140 40 Q160 0, 180 40 L200 80 Q240 20, 280 80 L290 40" stroke="%239b8875" fill="none" stroke-width="4" opacity="0.2"/><circle cx="60" cy="200" r="30" fill="%239b8875" opacity="0.1"/><circle cx="240" cy="150" r="50" fill="%239b8875" opacity="0.1"/><path d="M20 250 Q80 200, 140 250 Q200 200, 260 250" stroke="%239b8875" fill="none" stroke-width="5" opacity="0.2"/><path d="M100 40 Q120 20, 140 40" stroke="%239b8875" fill="none" stroke-width="3" opacity="0.2"/></svg>') repeat;
-            background-color: #f5f0e6;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f0e9dd;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
             color: #2c3e4f;
-            position: relative;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(145deg, rgba(245, 240, 230, 0.4) 0%, rgba(235, 225, 212, 0.4) 100%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .test-wrapper {
-            max-width: 1000px;
+        .test-container {
+            max-width: 800px;
             width: 100%;
-            position: relative;
-            z-index: 1;
+            margin: 0 auto;
         }
 
         .test-card {
-            background: rgba(255, 251, 245, 0.96);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 64px;
-            box-shadow: 0 40px 70px -20px rgba(70, 50, 30, 0.5);
-            padding: 45px 40px;
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            background: #fffef8;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+            padding: 24px 20px;
+            border: 1px solid #ede5d8;
+        }
+
+        @media (min-width: 600px) {
+            .test-card {
+                padding: 32px 28px;
+            }
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #4a5f72, #2f4459);
+            background: linear-gradient(135deg, #3a5a6e, #2c4a5e);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
         }
 
         .sub {
-            font-size: 1.1rem;
-            color: #6f8398;
-            margin-bottom: 30px;
-            border-left: 5px solid #bfaa92;
-            padding-left: 18px;
-            font-weight: 450;
+            font-size: 0.9rem;
+            color: #7a8b9b;
+            margin-bottom: 24px;
+            border-left: 3px solid #bfaa92;
+            padding-left: 14px;
         }
 
-        .progress-track {
-            background: #e2d9cf;
-            height: 10px;
-            border-radius: 30px;
-            margin: 15px 0 30px 0;
+        .progress-area {
+            background: #e8e0d4;
+            height: 6px;
+            border-radius: 10px;
+            margin: 16px 0 24px 0;
             overflow: hidden;
         }
 
         .progress-fill {
-            background: linear-gradient(90deg, #8b7a64, #b8a48c, #d4c5b2);
+            background: linear-gradient(90deg, #9b8875, #b8a48c);
             height: 100%;
             width: 0%;
-            border-radius: 30px;
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
 
         .question-box {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 48px;
-            padding: 38px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 30px rgba(130, 100, 80, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0e8de;
+        }
+
+        @media (min-width: 600px) {
+            .question-box {
+                padding: 28px 24px;
+            }
         }
 
         .question-text {
-            font-size: 1.6rem;
+            font-size: 1.35rem;
             font-weight: 500;
             color: #2c3f52;
             line-height: 1.4;
-            margin-bottom: 35px;
+            margin-bottom: 28px;
         }
 
-        .options {
+        @media (min-width: 600px) {
+            .question-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        .options-list {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .option {
-            background: #ffffff;
-            border: 2px solid #e0d5c7;
+            background: #fefcf8;
+            border: 2px solid #e8dfd2;
             border-radius: 60px;
-            padding: 18px 28px;
-            font-size: 1.15rem;
+            padding: 14px 20px;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             cursor: pointer;
-            transition: 0.25s;
+            transition: all 0.2s ease;
             color: #2c3e4f;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        @media (min-width: 600px) {
+            .option {
+                padding: 16px 24px;
+                font-size: 1.05rem;
+            }
         }
 
         .option:hover {
-            background: #fcf7f0;
-            border-color: #b8a48c;
-            transform: translateX(8px);
-            box-shadow: 0 8px 20px rgba(150, 120, 90, 0.15);
+            background: #faf5ed;
+            border-color: #cbb99f;
+            transform: translateX(4px);
         }
 
         .option.selected {
             background: #efe5d9;
-            border-color: #8b7a64;
-            box-shadow: inset 0 2px 10px rgba(150, 120, 90, 0.2), 0 8px 20px rgba(150, 120, 90, 0.15);
+            border-color: #9b8875;
         }
 
         .opt-letter {
-            width: 48px;
-            height: 48px;
-            background: #d9cdbf;
+            width: 34px;
+            height: 34px;
+            background: #e0d6ca;
             color: #2c3e4f;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-right: 22px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-right: 16px;
             flex-shrink: 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 600px) {
+            .opt-letter {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                margin-right: 20px;
+            }
         }
 
         .selected .opt-letter {
-            background: #8b7a64;
+            background: #9b8875;
             color: white;
         }
 
-        .badge-multi {
-            background: #b8a48c;
-            color: #2c3e4f;
-            font-size: 0.9rem;
-            padding: 6px 14px;
-            border-radius: 40px;
-            margin-left: 18px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .button-group {
+        .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin: 25px 0 15px;
+            gap: 10px;
+            margin: 20px 0 12px;
         }
 
         .btn {
             background: #ffffff;
-            border: 2px solid #d9cfc0;
-            padding: 16px 30px;
-            border-radius: 60px;
-            font-size: 1.1rem;
+            border: 2px solid #e0d5c7;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #4a5b69;
             cursor: pointer;
-            transition: 0.25s;
+            transition: all 0.2s;
             flex: 1 1 auto;
-            min-width: 140px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        @media (min-width: 600px) {
+            .btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
         }
 
         .btn-primary {
@@ -201,14 +215,12 @@
 
         .btn-primary:hover {
             background: #d2c4b2;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(150, 120, 90, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn:hover {
             background: #f5ede4;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
         }
 
         .btn:active {
@@ -219,76 +231,70 @@
             opacity: 0.4;
             cursor: not-allowed;
             transform: none;
-            box-shadow: none;
         }
 
         .counter {
             text-align: center;
-            margin-top: 25px;
-            font-size: 1.2rem;
-            color: #7e8e9c;
-            font-weight: 500;
-        }
-
-        .forest-note {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #9b8875;
-            font-style: italic;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #8f9eae;
         }
 
         .result-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 60px;
-            padding: 50px 40px;
+            background: #fffef8;
+            border-radius: 40px;
+            padding: 32px 24px;
             text-align: center;
         }
 
-        .score-large {
-            font-size: 7rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #4a5f72, #2f4459);
+        .score-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3a5a6e, #2c4a5e);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1;
         }
 
-        .score-percent {
-            font-size: 3rem;
-            font-weight: 400;
-            color: #6a7e92;
-            margin: 20px 0 25px;
+        @media (min-width: 600px) {
+            .score-number {
+                font-size: 5rem;
+            }
         }
 
-        .message {
+        .score-percent {
             font-size: 1.8rem;
+            font-weight: 400;
+            color: #6a7e92;
+            margin: 12px 0 20px;
+        }
+
+        .result-message {
+            font-size: 1.3rem;
             color: #4a5f71;
-            margin-bottom: 40px;
-            font-weight: 450;
+            margin-bottom: 28px;
         }
 
         .review-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 60px;
-            padding: 45px 40px;
+            background: #fffef8;
+            border-radius: 40px;
+            padding: 24px 20px;
         }
 
         .review-title {
-            font-size: 2.4rem;
+            font-size: 1.6rem;
             font-weight: 500;
             color: #2c3e4f;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .review-item {
-            background: #ffffff;
-            border-radius: 36px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-left: 10px solid;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            background: #fefaf5;
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 16px;
+            border-left: 6px solid;
         }
 
         .review-item.correct {
@@ -301,704 +307,342 @@
 
         .review-q {
             font-weight: 600;
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 18px;
-            border-radius: 40px;
             font-size: 1rem;
-            font-weight: 500;
-            margin: 6px 12px 6px 0;
+            margin-bottom: 12px;
         }
 
-        .badge-correct {
+        .review-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 4px 8px 4px 0;
+        }
+
+        .review-correct-badge {
             background: #d4e3d2;
             color: #1f5530;
         }
 
-        .badge-wrong {
+        .review-wrong-badge {
             background: #f3dedb;
             color: #9b4b43;
         }
 
-        .explain {
-            background: #fcf9f5;
-            border-radius: 28px;
-            padding: 20px;
-            margin-top: 18px;
-            border-left: 6px solid #bfaa92;
-            font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.5;
+        .review-explain {
+            background: #f7f2ea;
+            border-radius: 20px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #5a6e7d;
         }
 
-        .hidden { display: none; }
-        .text-center { text-align: center; }
-        .mt-4 { margin-top: 30px; }
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 16px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div class="test-wrapper" id="app">
+    <div class="test-container" id="app">
+        <!-- Тест -->
         <div v-if="!finished" class="test-card">
-            <h1>📡 ТСП — тактико-спеціальна підготовка</h1>
-            <div class="sub">50 питань · теорія зв'язку · організація</div>
+            <h1>📡 ТСП — тактико-спеціальна</h1>
+            <div class="sub">50 питань · оберіть правильний варіант</div>
             
-            <div class="progress-track">
-                <div class="progress-fill" :style="{ width: progress + '%' }"></div>
+            <div class="progress-area">
+                <div class="progress-fill" :style="{ width: progressPercent + '%' }"></div>
             </div>
 
             <div class="question-box">
                 <div class="question-text">{{ current.text }}</div>
-                <div class="options">
-                    <div v-for="(opt, idx) in current.options" :key="idx"
-                         class="option" :class="{ selected: isSelected(idx) }"
-                         @click="toggle(idx)">
+                <div class="options-list">
+                    <div v-for="(opt, idx) in current.shuffledOptions" :key="idx"
+                         class="option" :class="{ selected: selectedIndex === idx }"
+                         @click="selectOption(idx)">
                         <span class="opt-letter">{{ letters[idx] }}</span>
                         <span>{{ opt }}</span>
-                        <span v-if="current.multi" class="badge-multi">✱ можна обрати кілька</span>
                     </div>
                 </div>
             </div>
 
-            <div class="button-group">
+            <div class="buttons">
                 <button class="btn" @click="prev" :disabled="currentIdx === 0">← Назад</button>
-                <button v-if="!isLast" class="btn btn-primary" @click="next" :disabled="!hasSelection">Далі →</button>
-                <button v-else class="btn btn-primary" @click="finish" :disabled="!hasSelection">Завершити</button>
-                <button class="btn" @click="reset">Спочатку</button>
+                <button v-if="!isLast" class="btn btn-primary" @click="next" :disabled="selectedIndex === null">Далі →</button>
+                <button v-else class="btn btn-primary" @click="finish" :disabled="selectedIndex === null">Завершити</button>
+                <button class="btn" @click="resetTest">Спочатку</button>
             </div>
 
-            <div class="counter">{{ currentIdx + 1 }} / {{ total }}</div>
-            <div class="forest-note">🌿 тактико-спеціальна підготовка</div>
+            <div class="counter">{{ currentIdx + 1 }} / {{ totalCount }}</div>
         </div>
 
+        <!-- Результати -->
         <div v-else>
             <div v-if="!showReview" class="test-card result-card">
-                <div class="score-large">{{ score }}/{{ total }}</div>
+                <div class="score-number">{{ userScore }}/{{ totalCount }}</div>
                 <div class="score-percent">{{ scorePercent }}%</div>
-                <div class="message">
-                    <span v-if="scorePercent >= 85">🏆 Експерт ТСП!</span>
-                    <span v-else-if="scorePercent >= 70">📻 Професіонал</span>
-                    <span v-else-if="scorePercent >= 55">🔧 Оператор</span>
-                    <span v-else>📚 Потрібна практика</span>
+                <div class="result-message">
+                    <span v-if="scorePercent >= 85">🏆 Відмінно!</span>
+                    <span v-else-if="scorePercent >= 70">📻 Добре</span>
+                    <span v-else-if="scorePercent >= 55">🔧 Задовільно</span>
+                    <span v-else>📚 Потрібно повторити</span>
                 </div>
-                <div class="button-group">
-                    <button class="btn btn-primary" @click="showReview = true">📋 Розбір</button>
-                    <button class="btn" @click="reset">⟲ Заново</button>
+                <div class="buttons">
+                    <button class="btn btn-primary" @click="showReview = true">📋 Розбір помилок</button>
+                    <button class="btn" @click="resetTest">⟲ Пройти знову</button>
                 </div>
             </div>
 
+            <!-- Розбір -->
             <div v-else class="test-card review-card">
                 <h2 class="review-title">📋 Розбір помилок</h2>
-                <div v-for="(q, idx) in questions" :key="idx" 
-                     class="review-item" :class="{ correct: isAnswerCorrect(idx), incorrect: !isAnswerCorrect(idx) }">
+                <div v-for="(q, idx) in questionsWithAnswers" :key="idx" 
+                     class="review-item" :class="{ correct: userAnswers[idx] === q.correctText, incorrect: userAnswers[idx] !== q.correctText }">
                     <div class="review-q">{{ idx+1 }}. {{ q.text }}</div>
                     <div>
-                        <span class="badge" :class="isAnswerCorrect(idx) ? 'badge-correct' : 'badge-wrong'">
-                            Ваша: {{ formatUserAnswer(idx) }}
+                        <span class="review-badge" :class="userAnswers[idx] === q.correctText ? 'review-correct-badge' : 'review-wrong-badge'">
+                            Ваша відповідь: {{ userAnswers[idx] || '❌ не обрано' }}
                         </span>
-                        <span v-if="!isAnswerCorrect(idx)" class="badge badge-correct">
-                            ✅ Правильно: {{ formatCorrectAnswer(q) }}
+                        <span v-if="userAnswers[idx] !== q.correctText" class="review-badge review-correct-badge">
+                            ✅ Правильно: {{ q.correctText }}
                         </span>
                     </div>
-                    <div class="explain" v-html="q.explanation"></div>
+                    <div class="review-explain" v-html="q.explanation"></div>
                 </div>
-                <div class="text-center mt-4">
-                    <button class="btn btn-primary" @click="reset">⟲ Пройти знову</button>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary" @click="resetTest">⟲ Пройти знову</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                currentIdx: 0,
-                selected: [],
-                answers: [],
-                finished: false,
-                showReview: false,
-                letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-                questions: [
-                    // РОЗДІЛ 1: ОСНОВНІ ТЕРМІНИ ТА ВИЗНАЧЕННЯ (1-10)
-                    {
-                        text: "Умовне найменування апаратних радіоприймальних пристроїв:",
-                        options: ["БП-630", "Р-161", "Р-142", "Р-405"],
-                        correct: [0],
-                        explanation: "Умовне найменування апаратних радіоприймальних пристроїв — БП-630."
-                    },
-                    {
-                        text: "При розгортанні апаратних особовий склад працює в засобах захисту:",
-                        options: ["10%", "20%", "30%", "50%"],
-                        correct: [1],
-                        explanation: "При розгортанні апаратних особовий склад працює в засобах захисту — 20%."
-                    },
-                    {
-                        text: "Радіоцентр це:",
-                        options: [
-                            "Елемент вузла зв'язку",
-                            "Окрема радіостанція",
-                            "Система радіозв'язку",
-                            "Пункт управління"
-                        ],
-                        correct: [0],
-                        explanation: "Радіоцентр — це елемент вузла зв'язку."
-                    },
-                    {
-                        text: "Зв'язок і автоматизація управління військами — це:",
-                        options: [
-                            "Процес обміну інформацією, обробки інформації, вирішення інформаційних, розрахункових та інших задач із застосуванням засобів, комплексів зв'язку і автоматизації",
-                            "Система управління військами",
-                            "Сукупність технічних засобів",
-                            "Мережа зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Зв'язок і автоматизація управління військами — це процес обміну інформацією, обробки інформації, вирішення інформаційних, розрахункових та інших задач із застосуванням засобів, комплексів зв'язку і автоматизації в системі управління військами."
-                    },
-                    {
-                        text: "Визначені наступні категорії терміновості при передачі телеграм, текстових повідомлень:",
-                        options: [
-                            "\"ГОРИЗОНТ\", \"ЕФІР\", \"БУРАН\", \"ЗЛІТ\", \"ЗВИЧАЙНА\"",
-                            "\"ТЕРМІНОВО\", \"ЗВИЧАЙНО\"",
-                            "\"ВАЖЛИВО\", \"НЕВАЖЛИВО\"",
-                            "\"ВИСОКА\", \"СЕРЕДНЯ\", \"НИЗЬКА\""
-                        ],
-                        correct: [0],
-                        explanation: "Категорії терміновості: \"ГОРИЗОНТ\", \"ЕФІР\", \"БУРАН\", \"ЗЛІТ\", \"ЗВИЧАЙНА\"."
-                    },
-                    {
-                        text: "Документація оперативно-технічної служби на вузлах зв'язку і автоматизації включає до себе:",
-                        options: [
-                            "Документи з організації чергування; документи бойової готовності; документи з організації зв'язку; документи прихованого управління; інструкції, робочі книги та журнали; керівні документи; довідкові документи",
-                            "Тільки журнали чергування",
-                            "Тільки бойові документи",
-                            "Тільки технічну документацію"
-                        ],
-                        correct: [0],
-                        explanation: "Документація включає: документи з організації чергування; документи бойової готовності; документи з організації зв'язку; документи прихованого управління; інструкції, робочі книги та журнали; керівні документи; довідкові документи."
-                    },
-                    {
-                        text: "Кінцевий засіб зв'язку:",
-                        options: [
-                            "технічний пристрій, призначений для перетворення повідомлень, що передаються, у сигнали електрозв'язку і повідомлень, що приймаються, у зручну для сприйняття форму",
-                            "Радіостанція",
-                            "Телефонний апарат",
-                            "Антенно-фідерний пристрій"
-                        ],
-                        correct: [0],
-                        explanation: "Кінцевий засіб зв'язку — технічний пристрій, призначений для перетворення повідомлень, що передаються, у сигнали електрозв'язку і повідомлень, що приймаються, у зручну для сприйняття форму."
-                    },
-                    {
-                        text: "Діями номерів чергової обслуги при розгортанні апаратної керує:",
-                        options: ["Начальник апаратної", "Командир роти", "Начальник штабу", "Черговий по вузлу"],
-                        correct: [0],
-                        explanation: "Діями номерів чергової обслуги при розгортанні апаратної керує начальник апаратної."
-                    },
-                    {
-                        text: "Для стаціонарних електроустановок (засобів зв'язку) норма на захисне заземлення:",
-                        options: ["< 4 Ом", "< 10 Ом", "< 25 Ом", "< 40 Ом"],
-                        correct: [0],
-                        explanation: "Для стаціонарних електроустановок норма на захисне заземлення — < 4 Ом."
-                    },
-                    {
-                        text: "Передавання даних:",
-                        options: [
-                            "електрозв'язок, що забезпечує обмін інформацією у формі, придатній для автоматизованої обробки засобами обчислювальної техніки",
-                            "Передача голосу",
-                            "Передача тексту",
-                            "Передача зображень"
-                        ],
-                        correct: [0],
-                        explanation: "Передавання даних — електрозв'язок, що забезпечує обмін інформацією у формі, придатній для автоматизованої обробки засобами обчислювальної техніки."
-                    },
-                    
-                    // РОЗДІЛ 2: СПОСОБИ ТА ВИДИ ЗВ'ЯЗКУ (11-20)
-                    {
-                        text: "Способи організації зв'язку радіозасобами:",
-                        options: [
-                            "Радіонапрямок, радіомережа, абонентська група",
-                            "Радіонапрямок, радіомережа",
-                            "Радіонапрямок, абонентська група",
-                            "Радіомережа, абонентська група"
-                        ],
-                        correct: [0],
-                        explanation: "Способи організації зв'язку радіозасобами: радіонапрямок, радіомережа, абонентська група."
-                    },
-                    {
-                        text: "Категорії порушень безпеки зв'язку бувають:",
-                        options: ["1, 2, 3", "I, II, III", "A, B, C", "висока, середня, низька"],
-                        correct: [0],
-                        explanation: "Категорії порушень безпеки зв'язку: 1, 2, 3."
-                    },
-                    {
-                        text: "Транкінговий зв'язок:",
-                        options: [
-                            "радіозв'язок мобільних абонентів, що здійснюється через базову станцію, з автоматичним розподілом радіоканалів",
-                            "Проводовий зв'язок",
-                            "Супутниковий зв'язок",
-                            "Оптоволоконний зв'язок"
-                        ],
-                        correct: [0],
-                        explanation: "Транкінговий зв'язок — радіозв'язок мобільних абонентів, що здійснюється через базову приймально-передавальну станцію, з автоматичним розподілом радіоканалів."
-                    },
-                    {
-                        text: "Вузли зв'язку і автоматизації класифікуються за наступними ознаками:",
-                        options: [
-                            "За належністю до системи управління; за призначенням; за належністю до пунктів управління; за підпорядкованістю; за умовами функціонування та розміщення",
-                            "Тільки за призначенням",
-                            "Тільки за належністю",
-                            "Тільки за розміщенням"
-                        ],
-                        correct: [0],
-                        explanation: "Вузли зв'язку класифікуються: за належністю до системи управління; за призначенням; за належністю до пунктів управління; за підпорядкованістю; за умовами функціонування та розміщення."
-                    },
-                    {
-                        text: "Вимоги до зв'язку і автоматизації управління військами:",
-                        options: [
-                            "Своєчасність, достовірність, безпека",
-                            "Швидкість, якість, надійність",
-                            "Точність, оперативність, прихованість",
-                            "Безперервність, стійкість, живучість"
-                        ],
-                        correct: [0],
-                        explanation: "Вимоги до зв'язку і автоматизації: своєчасність, достовірність, безпека."
-                    },
-                    {
-                        text: "Допоміжний вузол зв'язку призначений:",
-                        options: [
-                            "для забезпечення зв'язку з'єднанням, частинам які діють на значному відстані від пунктів управління",
-                            "Для основного зв'язку",
-                            "Для резервування",
-                            "Для внутрішнього зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Допоміжний вузол зв'язку призначений для забезпечення зв'язку з'єднанням, частинам які діють на значному відстані від пунктів управління."
-                    },
-                    {
-                        text: "Способи розміщення вузла зв'язку на місцевості:",
-                        options: [
-                            "Лінійне, нелінійне",
-                            "Відкрите, закрите",
-                            "Розосереджене, зосереджене",
-                            "Стаціонарне, польове"
-                        ],
-                        correct: [0],
-                        explanation: "Способи розміщення вузла зв'язку на місцевості: лінійне, нелінійне."
-                    },
-                    {
-                        text: "Система зв'язку і автоматизації, це:",
-                        options: [
-                            "Сукупність взаємопов'язаних та узгоджених мереж, систем, ліній, вузлів, засобів зв'язку і автоматизації",
-                            "Окремий вузол зв'язку",
-                            "Мережа зв'язку",
-                            "Комплекс засобів"
-                        ],
-                        correct: [0],
-                        explanation: "Система зв'язку і автоматизації — сукупність взаємопов'язаних та узгоджених за завданнями мереж, систем, ліній, вузлів, засобів зв'язку і автоматизації різного призначення."
-                    },
-                    {
-                        text: "Опорний вузол зв'язку призначений: (оберіть всі правильні)",
-                        options: [
-                            "для утворення, складання каналів зв'язку і групових трактів",
-                            "для передачі каналів зв'язку на вузли зв'язку пунктів управління",
-                            "для передачі каналів зв'язку на допоміжні вузли зв'язку",
-                            "для резервування"
-                        ],
-                        multi: true,
-                        correct: [0, 1, 2],
-                        explanation: "Опорний вузол зв'язку призначений: для утворення каналів; для передачі каналів на вузли зв'язку пунктів управління; для передачі каналів на допоміжні вузли."
-                    },
-                    {
-                        text: "Радіозасоби зв'язку застосовують:",
-                        options: [
-                            "у всіх ланках управління, вони є основними",
-                            "тільки в тактичній ланці",
-                            "тільки в оперативній ланці",
-                            "тільки в стратегічній ланці"
-                        ],
-                        correct: [0],
-                        explanation: "Радіозасоби зв'язку застосовують у всіх ланках управління, вони є основними спроможними забезпечувати управління військами в складній обстановці."
-                    },
-                    
-                    // РОЗДІЛ 3: ОРГАНІЗАЦІЯ ТА УПРАВЛІННЯ (21-30)
-                    {
-                        text: "Вимоги до вузлів зв'язку і автоматизації включають до себе:",
-                        options: [
-                            "Постійна бойова готовність; мобільність; зручність в наданні послуг; розвідзахищеність; електромагнітна сумісність",
-                            "Тільки мобільність",
-                            "Тільки бойова готовність",
-                            "Тільки захищеність"
-                        ],
-                        correct: [0],
-                        explanation: "Вимоги: постійна бойова готовність; мобільність; зручність в наданні послуг; розвідзахищеність; електромагнітна сумісність."
-                    },
-                    {
-                        text: "Захист ВЗ ПУ від ВТЗ, радіорозвідки та РЄБ забезпечується:",
-                        options: [
-                            "все перераховане",
-                            "Тільки маскуванням",
-                            "Тільки шифруванням",
-                            "Тільки технічними засобами"
-                        ],
-                        correct: [0],
-                        explanation: "Захист ВЗ ПУ від ВТЗ, радіорозвідки та РЄБ забезпечується всіма перерахованими засобами."
-                    },
-                    {
-                        text: "Для управління вузлом зв'язку і автоматизації створюється система управління вузла, що охоплює:",
-                        options: [
-                            "Органи управління; пункт управління; мережу службового зв'язку та автоматичного контролю",
-                            "Тільки органи управління",
-                            "Тільки пункт управління",
-                            "Тільки мережу зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Система управління вузла охоплює: органи управління; пункт управління; мережу службового зв'язку та автоматичного контролю."
-                    },
-                    {
-                        text: "Основними способами маскування вузлів зв'язку і автоматизації є:",
-                        options: [
-                            "Приховування; імітація; демонстраційні дії; дезінформація",
-                            "Тільки приховування",
-                            "Тільки імітація",
-                            "Тільки дезінформація"
-                        ],
-                        correct: [0],
-                        explanation: "Способи маскування: приховування; імітація; демонстраційні дії; дезінформація."
-                    },
-                    {
-                        text: "Підготовка та допуск військовослужбовців до самостійного несення чергування на ВЗіА включає:",
-                        options: [
-                            "Навчання у складі підрозділів; стажування; складання заліків",
-                            "Тільки навчання",
-                            "Тільки стажування",
-                            "Тільки заліки"
-                        ],
-                        correct: [0],
-                        explanation: "Підготовка та допуск включає: навчання у складі підрозділів; стажування на ВЗіА; складання заліків на допуск."
-                    },
-                    {
-                        text: "Схема-наказ розробляється для:",
-                        options: [
-                            "Вузла зв'язку і автоматизації, центрів і бойових постів",
-                            "Тільки для вузла зв'язку",
-                            "Тільки для центрів",
-                            "Тільки для бойових постів"
-                        ],
-                        correct: [0],
-                        explanation: "Схема-наказ розробляється для вузла зв'язку і автоматизації, центрів і бойових постів."
-                    },
-                    {
-                        text: "Елемент вузла зв'язку -- це:",
-                        options: [
-                            "частина сил та засобів вузла зв'язку, що виконує функціонально одноманітне завдання",
-                            "Окрема радіостанція",
-                            "Окрема апаратна",
-                            "Пункт управління"
-                        ],
-                        correct: [0],
-                        explanation: "Елемент вузла зв'язку — частина сил та засобів вузла зв'язку, що виконує функціонально одноманітне завдання."
-                    },
-                    {
-                        text: "Для польових електроустановок (апаратних) норма на захисне заземлення:",
-                        options: ["< 25 Ом", "< 4 Ом", "< 10 Ом", "< 40 Ом"],
-                        correct: [0],
-                        explanation: "Для польових електроустановок норма на захисне заземлення — < 25 Ом."
-                    },
-                    {
-                        text: "Бойовий пост це:",
-                        options: [
-                            "Приміщення або апаратна де розміщенні засоби зв'язку",
-                            "Пункт управління",
-                            "Радіостанція",
-                            "Вузол зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Бойовий пост — приміщення або апаратна де розміщенні засоби зв'язку."
-                    },
-                    {
-                        text: "Вузли зв'язку і автоматизації призначені для:",
-                        options: [
-                            "забезпечення зв'язку між абонентами різних пунктів управління і внутрішнього зв'язку на пункті управління",
-                            "Тільки зовнішнього зв'язку",
-                            "Тільки внутрішнього зв'язку",
-                            "Тільки резервування"
-                        ],
-                        correct: [0],
-                        explanation: "Вузли зв'язку призначені для забезпечення зв'язку між абонентами різних пунктів управління і внутрішнього зв'язку."
-                    },
-                    
-                    // РОЗДІЛ 4: РОЗГОРТАННЯ ТА АНТЕНИ (31-40)
-                    {
-                        text: "Вузол зв'язку це:",
-                        options: [
-                            "Організаційно-технічна побудова сил та засобів зв'язку",
-                            "Окрема апаратна",
-                            "Система зв'язку",
-                            "Мережа зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Вузол зв'язку — організаційно-технічна побудова сил та засобів зв'язку."
-                    },
-                    {
-                        text: "Вимоги до управління зв'язком:",
-                        options: [
-                            "Постійна готовність, стійкість, безперервність, оперативність, прихованість, якість",
-                            "Тільки стійкість",
-                            "Тільки безперервність",
-                            "Тільки оперативність"
-                        ],
-                        correct: [0],
-                        explanation: "Вимоги до управління зв'язком: постійна готовність, стійкість, безперервність, оперативність, прихованість, якість."
-                    },
-                    {
-                        text: "Система зв'язку і автоматизації об'єднання включає до себе:",
-                        options: [
-                            "Вузли зв'язку пунктів управління, опорну мережу, лінії прямого зв'язку, лінії прив'язки, мережу ФПЗ, систему технічного забезпечення, систему управління, резерв сил",
-                            "Тільки вузли зв'язку",
-                            "Тільки опорну мережу",
-                            "Тільки лінії зв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Система зв'язку включає: вузли зв'язку, опорну мережу, лінії прямого зв'язку, лінії прив'язки, мережу ФПЗ, систему технічного забезпечення, систему управління, резерв сил."
-                    },
-                    {
-                        text: "Таблиця оперативно-технічних даних розробляється для:",
-                        options: [
-                            "Вузла зв'язку і автоматизації",
-                            "Радіостанції",
-                            "Апаратної",
-                            "Пункту управління"
-                        ],
-                        correct: [0],
-                        explanation: "Таблиця оперативно-технічних даних розробляється для вузла зв'язку і автоматизації."
-                    },
-                    {
-                        text: "Види зв'язку:",
-                        options: [
-                            "всі перераховані",
-                            "Тільки радіозв'язок",
-                            "Тільки проводовий",
-                            "Тільки супутниковий"
-                        ],
-                        correct: [0],
-                        explanation: "Види зв'язку: всі перераховані (радіозв'язок, проводовий, супутниковий тощо)."
-                    },
-                    {
-                        text: "Під час роботи в апаратній дозволяється особисту зброю зберігати:",
-                        options: [
-                            "В піраміді станції (апаратної)",
-                            "При собі",
-                            "В окремому приміщенні",
-                            "В транспортному засобі"
-                        ],
-                        correct: [0],
-                        explanation: "Під час роботи в апаратній особисту зброю дозволяється зберігати в піраміді станції (апаратної)."
-                    },
-                    {
-                        text: "Документи по ОТС чергової зміни елементу ВЗ:",
-                        options: [
-                            "схема-наказ, журнал чергового, графік стану зв'язків",
-                            "Тільки журнал чергового",
-                            "Тільки схема-наказ",
-                            "Тільки графік стану"
-                        ],
-                        correct: [0],
-                        explanation: "Документи по ОТС: схема-наказ на забезпечення зв'язку; журнал чергового по центру; графік стану зв'язків центру."
-                    },
-                    {
-                        text: "Дати визначення радіомережі:",
-                        options: [
-                            "спосіб організації радіозв'язку між декількома (трьома і більше) командирами (штабами)",
-                            "Зв'язок між двома кореспондентами",
-                            "Система радіостанцій",
-                            "Мережа радіозв'язку"
-                        ],
-                        correct: [0],
-                        explanation: "Радіомережа — спосіб організації радіозв'язку між декількома (трьома і більше) командирами (штабами)."
-                    },
-                    {
-                        text: "До складу чергової зміни вузла зв'язку входять:",
-                        options: [
-                            "радіотелеграфісти, телефоністи, експедитори",
-                            "Тільки радіотелеграфісти",
-                            "Тільки телефоністи",
-                            "Тільки експедитори"
-                        ],
-                        correct: [0],
-                        explanation: "До складу чергової зміни вузла зв'язку входять: радіотелеграфісти, телефоністи, експедитори."
-                    },
-                    {
-                        text: "Азимут на кореспондента визначається за допомогою:",
-                        options: [
-                            "Компаса та бусолі",
-                            "GPS-навігатора",
-                            "Радіопеленгатора",
-                            "Топографічної карти"
-                        ],
-                        correct: [0],
-                        explanation: "Азимут на кореспондента визначається за допомогою компаса та бусолі."
-                    },
-                    
-                    // РОЗДІЛ 5: ТЕХНІЧНІ ПАРАМЕТРИ (41-50)
-                    {
-                        text: "Відстань між елементами (центрами) ВЗ при розгортанні на місцевості:",
-                        options: ["150-200м", "50-70м", "100-150м", "200-250м"],
-                        correct: [0],
-                        explanation: "Відстань між елементами (центрами) ВЗ при розгортанні на місцевості — 150-200 м."
-                    },
-                    {
-                        text: "Відстань між групами апаратних елемента ВЗ при розгортанні на місцевості:",
-                        options: ["50-70м", "150-200м", "100-150м", "200-250м"],
-                        correct: [0],
-                        explanation: "Відстань між групами апаратних елемента ВЗ — 50-70 м."
-                    },
-                    {
-                        text: "Які антени для прийому та передачі застосовуються в апаратній Р-161А2М при роботі з радіостанцією RF-7800H?",
-                        options: ["RF-1944 та RF-3120", "RF-1940 та OE-505", "RF-1912 та RF-1940", "AC30 та AC120"],
-                        correct: [0],
-                        explanation: "В апаратній Р-161А2М застосовуються антени RF-1944 та RF-3120."
-                    },
-                    {
-                        text: "Хто входить до складу апаратної Р-161А2М?",
-                        options: [
-                            "Начальник апаратної, старший радіотелефоніст, радіотелефоніст, водій-електрик",
-                            "Тільки начальник апаратної",
-                            "Тільки радіотелефоністи",
-                            "Тільки водій"
-                        ],
-                        correct: [0],
-                        explanation: "До складу апаратної Р-161А2М входять: начальник апаратної, старший радіотелефоніст, радіотелефоніст, водій-електрик."
-                    },
-                    {
-                        text: "Який ярус відтяжок НЕ використовується при фіксації щогли на кунзі апаратної Р-161А2М?",
-                        options: ["перший", "другий", "третій", "четвертий"],
-                        correct: [0],
-                        explanation: "При фіксації щогли на кунзі апаратної Р-161А2М не використовується перший ярус відтяжок."
-                    },
-                    {
-                        text: "При використанні антени ОЕ-505 в якості щогли до якого коліну під'єднуємо дипольний адаптер?",
-                        options: ["четверте", "друге", "третє", "п'яте"],
-                        correct: [0],
-                        explanation: "При використанні антени ОЕ-505 як щогли дипольний адаптер під'єднуємо до четвертого коліна."
-                    },
-                    {
-                        text: "Яка відстань між щоглами при розгортанні антени RF-1912?",
-                        options: ["23 метри", "15 метрів", "30 метрів", "20 метрів"],
-                        correct: [0],
-                        explanation: "Відстань між щоглами при розгортанні антени RF-1912 — 23 метри."
-                    },
-                    {
-                        text: "Яка кількість колін в щоглах, що входять до складу антени RF-1912?",
-                        options: ["5 колін", "4 коліна", "6 колін", "7 колін"],
-                        correct: [0],
-                        explanation: "В щоглах антени RF-1912 — 5 колін."
-                    },
-                    {
-                        text: "З чого складається антена RF-1944? (оберіть всі правильні)",
-                        options: [
-                            "Два плеча диполя",
-                            "Два нейлонових шнура",
-                            "Мотовила",
-                            "Два кола",
-                            "Два додаткових навантажувальних опора",
-                            "Два кола заземлення",
-                            "Узгоджуючий трансформатор",
-                            "Коаксіальний кабель"
-                        ],
-                        multi: true,
-                        correct: [0, 1, 2, 3, 4, 5, 6, 7],
-                        explanation: "Антена RF-1944 складається з: два плеча диполя, два нейлонових шнура, мотовила, два кола, два додаткових навантажувальних опора, два кола заземлення, узгоджуючий трансформатор, коаксіальний кабель, сумка для переносу."
-                    },
-                    {
-                        text: "Які варіанти живлення радіостанції RF-7800Н в складі апаратної Р-161А2М?",
-                        options: ["220В та 24В", "12В та 24В", "220В та 12В", "тільки 220В"],
-                        correct: [0],
-                        explanation: "Радіостанція RF-7800Н в складі апаратної Р-161А2М живиться від 220В та 24В."
+        (function() {
+            // БАЗОВІ ПИТАННЯ (без варіантів, тільки текст і правильна відповідь)
+            const baseQuestions = [
+                { text: "Умовне найменування апаратних радіоприймальних пристроїв:", correct: "БП-630", explanation: "Умовне найменування апаратних радіоприймальних пристроїв — БП-630." },
+                { text: "При розгортанні апаратних особовий склад працює в засобах захисту:", correct: "20%", explanation: "При розгортанні апаратних особовий склад працює в засобах захисту — 20%." },
+                { text: "Радіоцентр це:", correct: "Елемент вузла зв'язку", explanation: "Радіоцентр — це елемент вузла зв'язку." },
+                { text: "Зв'язок і автоматизація управління військами — це:", correct: "Процес обміну інформацією, обробки інформації, вирішення інформаційних, розрахункових та інших задач із застосуванням засобів, комплексів зв'язку і автоматизації в системі управління військами", explanation: "Зв'язок і автоматизація управління військами — це процес обміну інформацією, обробки інформації, вирішення інформаційних, розрахункових та інших задач." },
+                { text: "Визначені наступні категорії терміновості при передачі телеграм, текстових повідомлень:", correct: "\"ГОРИЗОНТ\", \"ЕФІР\", \"БУРАН\", \"ЗЛІТ\", \"ЗВИЧАЙНА\"", explanation: "Категорії терміновості: \"ГОРИЗОНТ\", \"ЕФІР\", \"БУРАН\", \"ЗЛІТ\", \"ЗВИЧАЙНА\"." },
+                { text: "Кінцевий засіб зв'язку:", correct: "технічний пристрій, призначений для перетворення повідомлень, що передаються, у сигнали електрозв'язку і повідомлень, що приймаються, у зручну для сприйняття форму", explanation: "Кінцевий засіб зв'язку — технічний пристрій для перетворення повідомлень у сигнали електрозв'язку." },
+                { text: "Діями номерів чергової обслуги при розгортанні апаратної керує:", correct: "Начальник апаратної", explanation: "Діями номерів чергової обслуги керує начальник апаратної." },
+                { text: "Для стаціонарних електроустановок (засобів зв'язку) норма на захисне заземлення:", correct: "< 4 Ом", explanation: "Для стаціонарних електроустановок норма на захисне заземлення — < 4 Ом." },
+                { text: "Передавання даних:", correct: "електрозв'язок, що забезпечує обмін інформацією у формі, придатній для автоматизованої обробки засобами обчислювальної техніки", explanation: "Передавання даних — електрозв'язок для автоматизованої обробки інформації." },
+                { text: "Способи організації зв'язку радіозасобами:", correct: "Радіонапрямок, радіомережа, абонентська група", explanation: "Способи організації зв'язку радіозасобами: радіонапрямок, радіомережа, абонентська група." },
+                { text: "Категорії порушень безпеки зв'язку бувають:", correct: "1, 2, 3", explanation: "Категорії порушень безпеки зв'язку: 1, 2, 3." },
+                { text: "Вимоги до зв'язку і автоматизації управління військами:", correct: "Своєчасність, достовірність, безпека", explanation: "Вимоги: своєчасність, достовірність, безпека." },
+                { text: "Допоміжний вузол зв'язку призначений:", correct: "для забезпечення зв'язку з'єднанням, частинам які діють на значному відстані від пунктів управління", explanation: "Допоміжний вузол зв'язку забезпечує зв'язок з'єднанням на значній відстані." },
+                { text: "Способи розміщення вузла зв'язку на місцевості:", correct: "Лінійне, нелінійне", explanation: "Способи розміщення вузла зв'язку: лінійне, нелінійне." },
+                { text: "Система зв'язку і автоматизації, це:", correct: "Сукупність взаємопов'язаних та узгоджених за завданнями мереж, систем, ліній, вузлів, засобів зв'язку і автоматизації різного призначення", explanation: "Система зв'язку — сукупність взаємопов'язаних засобів зв'язку і автоматизації." },
+                { text: "Радіозасоби зв'язку застосовують:", correct: "у всіх ланках управління, вони є основними спроможними забезпечувати управління військами в складній обстановці і при находжені командирів і штабів у русі", explanation: "Радіозасоби застосовують у всіх ланках управління." },
+                { text: "Вимоги до вузлів зв'язку і автоматизації включають до себе:", correct: "Постійна бойова готовність; мобільність; зручність в наданні послуг; розвідзахищеність; електромагнітна сумісність", explanation: "Вимоги: бойова готовність, мобільність, зручність, розвідзахищеність, електромагнітна сумісність." },
+                { text: "Для польових електроустановок (апаратних) норма на захисне заземлення:", correct: "< 25 Ом", explanation: "Для польових електроустановок норма на захисне заземлення — < 25 Ом." },
+                { text: "Бойовий пост це:", correct: "Приміщення або апаратна де розміщенні засоби зв'язку", explanation: "Бойовий пост — приміщення або апаратна з засобами зв'язку." },
+                { text: "Вузли зв'язку і автоматизації призначені для:", correct: "Для забезпечення зв'язку між абонентами різних пунктів управління і внутрішнього зв'язку безпосередньо на самому пункті управління", explanation: "Вузли зв'язку забезпечують зв'язок між абонентами та внутрішній зв'язок." },
+                { text: "Вузол зв'язку це:", correct: "Організаційно-технічна побудова сил та засобів зв'язку", explanation: "Вузол зв'язку — організаційно-технічна побудова сил та засобів зв'язку." },
+                { text: "Вимоги до управління зв'язком:", correct: "Постійна готовність, стійкість, безперервність, оперативність, прихованість, якість", explanation: "Вимоги до управління зв'язком: постійна готовність, стійкість, безперервність, оперативність, прихованість, якість." },
+                { text: "Таблиця оперативно-технічних даних розробляється для:", correct: "Вузла зв'язку і автоматизації", explanation: "Таблиця оперативно-технічних даних розробляється для вузла зв'язку і автоматизації." },
+                { text: "Види зв'язку:", correct: "всі перераховані", explanation: "Види зв'язку: всі перераховані." },
+                { text: "Під час роботи в апаратній дозволяється особисту зброю зберігати:", correct: "В піраміді станції (апаратної)", explanation: "Особисту зброю зберігають в піраміді станції." },
+                { text: "Дати визначення радіомережі:", correct: "спосіб організації радіозв'язку між декількома (трьома і більше) командирами (штабами)", explanation: "Радіомережа — зв'язок між трьома і більше кореспондентами." },
+                { text: "До складу чергової зміни вузла зв'язку входять:", correct: "радіотелеграфісти, телефоністи, експедитори", explanation: "До складу чергової зміни входять радіотелеграфісти, телефоністи, експедитори." },
+                { text: "Азимут на кореспондента визначається за допомогою:", correct: "Компаса та бусолі", explanation: "Азимут визначається за допомогою компаса та бусолі." },
+                { text: "Відстань між елементами (центрами) ВЗ при розгортанні на місцевості:", correct: "150-200м", explanation: "Відстань між елементами ВЗ — 150-200 м." },
+                { text: "Відстань між групами апаратних елемента ВЗ при розгортанні на місцевості:", correct: "50-70м", explanation: "Відстань між групами апаратних — 50-70 м." },
+                { text: "Які антени для прийому та передачі застосовуються в апаратній Р-161А2М при роботі з радіостанцією RF-7800H?", correct: "RF-1944 та RF-3120", explanation: "В апаратній Р-161А2М застосовуються антени RF-1944 та RF-3120." },
+                { text: "Хто входить до складу апаратної Р-161А2М?", correct: "Начальник апаратної, старший радіотелефоніст, радіотелефоніст, водій-електрик", explanation: "Склад апаратної: начальник, старший радіотелефоніст, радіотелефоніст, водій-електрик." },
+                { text: "Який ярус відтяжок НЕ використовується при фіксації щогли на кунзі апаратної Р-161А2М?", correct: "перший", explanation: "Не використовується перший ярус відтяжок." },
+                { text: "При використанні антени ОЕ-505 в якості щогли до якого коліну під'єднуємо дипольний адаптер?", correct: "четверте", explanation: "Дипольний адаптер під'єднуємо до четвертого коліна." },
+                { text: "Яка відстань між щоглами при розгортанні антени RF-1912?", correct: "23 метри", explanation: "Відстань між щоглами — 23 метри." },
+                { text: "Яка кількість колін в щоглах, що входять до складу антени RF-1912?", correct: "5 колін", explanation: "В щоглах антени RF-1912 — 5 колін." },
+                { text: "Які варіанти живлення радіостанції RF-7800Н в складі апаратної Р-161А2М?", correct: "220В та 24В", explanation: "Живлення RF-7800Н: 220В та 24В." }
+            ];
+
+            // Генерація схожих варіантів для кожного питання
+            function generateSimilarOptions(correct, questionIndex) {
+                // Банк схожих відповідей для підміни
+                const similarBanks = {
+                    "БП-630": ["БП-620", "Р-161", "Р-142", "БП-640", "Р-405", "Р-168"],
+                    "20%": ["10%", "15%", "25%", "30%", "40%", "50%"],
+                    "Елемент вузла зв'язку": ["Пункт управління", "Окрема радіостанція", "Система зв'язку", "Мережа зв'язку", "Центр управління"],
+                    "Радіонапрямок, радіомережа, абонентська група": ["Радіонапрямок, радіомережа", "Радіонапрямок, абонентська група", "Радіомережа, абонентська група", "Радіонапрямок, радіолінія"],
+                    "1, 2, 3": ["I, II, III", "A, B, C", "висока, середня, низька", "1, 2", "2, 3"],
+                    "Своєчасність, достовірність, безпека": ["Швидкість, якість, надійність", "Точність, оперативність, прихованість", "Безперервність, стійкість, живучість", "Оперативність, надійність, якість"],
+                    "Лінійне, нелінійне": ["Відкрите, закрите", "Розосереджене, зосереджене", "Стаціонарне, польове", "Кругове, лінійне"],
+                    "< 4 Ом": ["< 1 Ом", "< 2 Ом", "< 5 Ом", "< 10 Ом", "< 25 Ом", "> 4 Ом"],
+                    "< 25 Ом": ["< 4 Ом", "< 10 Ом", "< 15 Ом", "< 20 Ом", "< 30 Ом", "> 25 Ом"],
+                    "перший": ["другий", "третій", "четвертий", "п'ятий", "нижній", "верхній"],
+                    "четверте": ["друге", "третє", "п'яте", "шосте", "перше"],
+                    "23 метри": ["15 метрів", "18 метрів", "20 метрів", "25 метрів", "30 метрів", "35 метрів"],
+                    "5 колін": ["4 коліна", "6 колін", "7 колін", "8 колін", "3 коліна"],
+                    "220В та 24В": ["12В та 24В", "220В та 12В", "тільки 220В", "тільки 24В", "110В та 24В", "220В та 36В"],
+                    "Начальник апаратної": ["Командир роти", "Начальник штабу", "Черговий по вузлу", "Старший зміни", "Командир взводу"],
+                    "150-200м": ["100-150м", "120-180м", "180-220м", "200-250м", "50-100м"],
+                    "50-70м": ["30-50м", "40-60м", "60-80м", "70-100м", "80-120м"],
+                    "RF-1944 та RF-3120": ["RF-1940 та OE-505", "RF-1912 та RF-1940", "AC30 та AC120", "RF-1944 та OE-505", "RF-3120 та RF-1912"]
+                };
+                
+                const bank = similarBanks[correct];
+                if (bank && bank.length >= 3) {
+                    // Взяти 3 випадкові схожі варіанти
+                    const shuffled = [...bank];
+                    for (let i = shuffled.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
                     }
-                ]
-            },
-            computed: {
-                current() { return this.questions[this.currentIdx]; },
-                total() { return this.questions.length; },
-                isLast() { return this.currentIdx === this.total - 1; },
-                progress() { return ((this.currentIdx + 1) / this.total) * 100; },
-                hasSelection() { return this.selected.length > 0; },
-                score() {
-                    let correct = 0;
-                    for (let i = 0; i < this.questions.length; i++) {
-                        if (this.isAnswerCorrect(i)) correct++;
+                    const options = [correct, ...shuffled.slice(0, 3)];
+                    // Перемішати
+                    for (let i = options.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [options[i], options[j]] = [options[j], options[i]];
                     }
-                    return correct;
-                },
-                scorePercent() { return Math.round((this.score / this.total) * 100); }
-            },
-            methods: {
-                toggle(idx) {
-                    const q = this.current;
-                    if (q.multi) {
-                        const i = this.selected.indexOf(idx);
-                        if (i === -1) this.selected.push(idx);
-                        else this.selected.splice(i, 1);
-                    } else {
-                        this.selected = this.selected[0] === idx ? [] : [idx];
-                    }
-                },
-                isSelected(idx) { return this.selected.includes(idx); },
-                next() {
-                    if (this.hasSelection) {
-                        this.$set(this.answers, this.currentIdx, [...this.selected]);
-                        if (this.currentIdx < this.total - 1) {
-                            this.currentIdx++;
-                            this.selected = this.answers[this.currentIdx] ? [...this.answers[this.currentIdx]] : [];
-                        }
-                    }
-                },
-                prev() {
-                    if (this.currentIdx > 0) {
-                        this.$set(this.answers, this.currentIdx, [...this.selected]);
-                        this.currentIdx--;
-                        this.selected = this.answers[this.currentIdx] ? [...this.answers[this.currentIdx]] : [];
-                    }
-                },
-                finish() {
-                    if (this.hasSelection) this.$set(this.answers, this.currentIdx, [...this.selected]);
-                    this.finished = true;
-                },
-                reset() {
-                    this.currentIdx = 0;
-                    this.selected = [];
-                    this.answers = [];
-                    this.finished = false;
-                    this.showReview = false;
-                },
-                isAnswerCorrect(idx) {
-                    const q = this.questions[idx];
-                    const ans = this.answers[idx] || [];
-                    if (!q.multi) return ans.length === 1 && ans[0] === q.correct[0];
-                    const correctSorted = [...q.correct].sort();
-                    const ansSorted = [...ans].sort();
-                    if (ansSorted.length !== correctSorted.length) return false;
-                    for (let i = 0; i < ansSorted.length; i++) {
-                        if (ansSorted[i] !== correctSorted[i]) return false;
-                    }
-                    return true;
-                },
-                formatUserAnswer(idx) {
-                    const q = this.questions[idx];
-                    const ans = this.answers[idx] || [];
-                    if (ans.length === 0) return '❌ не обрано';
-                    return ans.map(i => this.letters[i]).join(', ');
-                },
-                formatCorrectAnswer(q) {
-                    if (!q.multi) return this.letters[q.correct[0]];
-                    return q.correct.map(i => this.letters[i]).join(', ');
+                    return options;
                 }
+                
+                // Якщо немає банку, створити універсальні схожі варіанти
+                return [correct, "Невірний варіант 1", "Невірний варіант 2", "Невірний варіант 3"];
             }
-        });
+
+            // Підготовка питань з динамічними варіантами
+            function prepareQuestions() {
+                return baseQuestions.map((q, idx) => {
+                    const similarOptions = generateSimilarOptions(q.correct, idx);
+                    return {
+                        ...q,
+                        correctText: q.correct,
+                        options: similarOptions
+                    };
+                });
+            }
+
+            let questionsData = prepareQuestions();
+            
+            // Перемішування варіантів для кожного питання при завантаженні
+            function shuffleOptions(questions) {
+                return questions.map(q => {
+                    const shuffled = [...q.options];
+                    for (let i = shuffled.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                    }
+                    return {
+                        ...q,
+                        shuffledOptions: shuffled
+                    };
+                });
+            }
+
+            new Vue({
+                el: '#app',
+                data: {
+                    currentIdx: 0,
+                    selectedIndex: null,
+                    userAnswers: [],
+                    finished: false,
+                    showReview: false,
+                    questions: shuffleOptions(questionsData),
+                    letters: ['A', 'B', 'C', 'D']
+                },
+                computed: {
+                    current() {
+                        return this.questions[this.currentIdx];
+                    },
+                    totalCount() {
+                        return this.questions.length;
+                    },
+                    isLast() {
+                        return this.currentIdx === this.totalCount - 1;
+                    },
+                    progressPercent() {
+                        return ((this.currentIdx + 1) / this.totalCount) * 100;
+                    },
+                    userScore() {
+                        let correct = 0;
+                        for (let i = 0; i < this.questions.length; i++) {
+                            if (this.userAnswers[i] === this.questions[i].correctText) correct++;
+                        }
+                        return correct;
+                    },
+                    scorePercent() {
+                        return Math.round((this.userScore / this.totalCount) * 100);
+                    },
+                    questionsWithAnswers() {
+                        return this.questions;
+                    }
+                },
+                methods: {
+                    selectOption(idx) {
+                        this.selectedIndex = idx;
+                    },
+                    next() {
+                        if (this.selectedIndex !== null) {
+                            const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
+                            this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
+                            if (this.currentIdx < this.totalCount - 1) {
+                                this.currentIdx++;
+                                // Відновити вибраний індекс для наступного питання
+                                const savedAnswer = this.userAnswers[this.currentIdx];
+                                if (savedAnswer) {
+                                    const foundIdx = this.current.shuffledOptions.findIndex(opt => opt === savedAnswer);
+                                    this.selectedIndex = foundIdx !== -1 ? foundIdx : null;
+                                } else {
+                                    this.selectedIndex = null;
+                                }
+                            }
+                        }
+                    },
+                    prev() {
+                        if (this.currentIdx > 0) {
+                            if (this.selectedIndex !== null) {
+                                const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
+                                this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
+                            }
+                            this.currentIdx--;
+                            const savedAnswer = this.userAnswers[this.currentIdx];
+                            if (savedAnswer) {
+                                const foundIdx = this.current.shuffledOptions.findIndex(opt => opt === savedAnswer);
+                                this.selectedIndex = foundIdx !== -1 ? foundIdx : null;
+                            } else {
+                                this.selectedIndex = null;
+                            }
+                        }
+                    },
+                    finish() {
+                        if (this.selectedIndex !== null) {
+                            const selectedAnswer = this.current.shuffledOptions[this.selectedIndex];
+                            this.$set(this.userAnswers, this.currentIdx, selectedAnswer);
+                        }
+                        this.finished = true;
+                    },
+                    resetTest() {
+                        // Перемішати варіанти заново
+                        this.questions = shuffleOptions(questionsData);
+                        this.currentIdx = 0;
+                        this.selectedIndex = null;
+                        this.userAnswers = [];
+                        this.finished = false;
+                        this.showReview = false;
+                    }
+                }
+            });
+        })();
     </script>
 </body>
 </html>
